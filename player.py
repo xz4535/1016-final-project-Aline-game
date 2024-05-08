@@ -220,6 +220,7 @@ class Player(object):
         print("Training Starting")
         print("-" * 25)
         start_time = time.time()
+        self.duration = start_time
         if self.config.pretrain:
             print("Loading Model")
 
@@ -347,10 +348,11 @@ class Player(object):
                 sys.stdout.flush()
                 end_time = time.time()
                 self.duration = end_time - self.duration
-                print("Level {}, runs {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs, self.steps, self.episode_reward, self.duration))
+                print("Level {}, rounds {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
-                num_runs += 1
+                self.num_runs += 1
+                self.duration = end_time
                 self.model_update()
 
                 # self.reward_history.append([self.Env.lvl, self.steps, self.episode_reward, self.win])
