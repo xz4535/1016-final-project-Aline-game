@@ -347,7 +347,7 @@ class Player(object):
                 # pdb.set_trace()
                 sys.stdout.flush()
                 end_time = time.time()
-                self.duration = end_time - self.duration
+                self.duration = end_time - self.start_time
                 print("Level {}, rounds {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
