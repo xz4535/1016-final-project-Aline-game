@@ -20,7 +20,7 @@ import cloudpickle
 
 import os
 from pygame.locals import K_RIGHT, K_LEFT, K_UP, K_DOWN, K_SPACE
-
+import time
 
 # colors from VGDL?
 
@@ -112,6 +112,7 @@ class Player(object):
                 else:  # if this isn't the last level
 
                     self.Env.lvl += 1
+
                     self.Env.set_level(self.Env.lvl)
                     print("Next Level!")
 
