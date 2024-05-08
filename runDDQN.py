@@ -1,7 +1,7 @@
 
 import argparse
 import sys
-
+import time
 from player import Player
 import pdb
 import numpy as np
@@ -42,6 +42,7 @@ config.file_names = 'all_games/'
 print("Game: {}".format(config.game_name))
 
 for trial_num in range(config.num_trials):
+	start_time = time.time()  # Start timing before the trial begins
 
 	config.trial_num =  trial_num + int(config.trial_num)
 
@@ -50,6 +51,10 @@ for trial_num in range(config.num_trials):
 	game_player = Player(config)
 
 	game_player.train_model()
+
+	end_time = time.time()  # End timing after the trial ends
+
+    print(f"Trial {int(config.trial_num) + 1} completed in {end_time - start_time:.2f} seconds")  # Print the duration of the trial
 
 print("Done training ALL!")
 

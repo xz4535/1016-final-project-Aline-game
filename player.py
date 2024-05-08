@@ -28,7 +28,7 @@ from pygame.locals import K_RIGHT, K_LEFT, K_UP, K_DOWN, K_SPACE
 class Player(object):
     def __init__(self, config):
         self.config = config
-        self.Env = VGDLEnv(self.config.game_name, 'all_game')
+        self.Env = VGDLEnv(self.config.game_name, 'all_games')
         self.Env.set_level(0)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
