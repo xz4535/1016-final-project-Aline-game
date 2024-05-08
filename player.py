@@ -28,7 +28,7 @@ from pygame.locals import K_RIGHT, K_LEFT, K_UP, K_DOWN, K_SPACE
 class Player(object):
     def __init__(self, config):
         self.config = config
-        self.Env = VGDLEnv(self.config.game_name, 'all_games')
+        self.Env = VGDLEnv(self.config.game_name, 'all_game')
         self.Env.set_level(0)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -231,12 +231,12 @@ class Player(object):
 
         with open('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                              self.config.level_switch,
-                                                                             self.config.trial_num), "wb") as file:
+                                                                             self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(["level", "steps", "ep_reward", "win", "game_name", "criteria"])
 
         with open('object_interaction_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
-                self.config.game_name, self.config.level_switch, self.config.trial_num), "wb") as file:
+                self.config.game_name, self.config.level_switch, self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
             interactionfilewriter = csv.writer(file)
             interactionfilewriter.writerow(
                 ['agent_type', 'subject_ID', 'modelrun_ID', 'game_name', 'game_level', 'episode_number', 'event_name',
@@ -332,7 +332,7 @@ class Player(object):
 
                 ## PEDRO: 3. At the end of each episode, write events to csv
                 with open('object_interaction_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
-                        self.config.game_name, self.config.level_switch, self.config.trial_num), "ab") as file:
+                        self.config.game_name, self.config.level_switch, self.config.trial_num), "a", newline='') as file:
                     interactionfilewriter = csv.writer(file)
                     for event_name, count in event_dict.items():
                         row = ('DDQN', 'NA', 'NA', self.config.game_name, self.Env.lvl, self.episode, event_name, count)
@@ -358,7 +358,7 @@ class Player(object):
                     with open('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                                          self.config.level_switch,
                                                                                          self.config.trial_num),
-                              "ab") as file:
+                              "a", newline='') as file:
                         writer = csv.writer(file)
                         writer.writerow(episde_results)
                     break
@@ -371,7 +371,7 @@ class Player(object):
 
                 ## PEDRO: Write pickle to file every 100 episodes
                 if self.episode % 2 == 0:
-                    with open(picklefilepath, 'wb') as f:
+                    with open('avator_position/aliens_avator_position_data.csv', 'wb') as f:
                         cloudpickle.dump(avatar_position_data, f)
 
                 ## add a new list for the new episode; populate new list with tuple of first state
@@ -391,7 +391,7 @@ class Player(object):
                 with open('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                                      self.config.level_switch,
                                                                                      self.config.trial_num),
-                          "ab") as file:
+                          "a", newline='') as file:
                     writer = csv.writer(file)
                     writer.writerow(episde_results)
 
