@@ -27,12 +27,12 @@ import time
 
 class Player(object):
     def __init__(self, config):
+        # self.start_time = time.time() 
         self.config = config
         self.Env = VGDLEnv(self.config.game_name, 'all_games')
         self.Env.set_level(0)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-        print('Training at seed = {}'.format(self.config.random_seed))
+        print('device = {}, Training at seed = {}'.format(self.device,self.config.random_seed))
 
         self.game_size = np.shape(self.Env.render())
         self.input_channels = self.game_size[2]
@@ -62,6 +62,8 @@ class Player(object):
         self.num_episodes = config.num_episodes
 
         self.screen_history = []
+        self.num_runs = 0
+        self.duration = 0
 
     def save_screen(self):
 
@@ -217,7 +219,7 @@ class Player(object):
 
         print("Training Starting")
         print("-" * 25)
-
+        start_time = time.time()
         if self.config.pretrain:
             print("Loading Model")
 
@@ -267,7 +269,7 @@ class Player(object):
         self.state = current_screen - last_screen
 
         while self.steps < self.config.max_steps:
-
+            self.duration = 0
             self.steps += 1
             self.episode_steps += 1
 
@@ -342,10 +344,13 @@ class Player(object):
                 self.episode += 1
 
                 # pdb.set_trace()
-                print("Level {}, episode reward at step {}: {}".format(self.Env.lvl, self.steps, self.episode_reward))
                 sys.stdout.flush()
+                end_time = time.time()
+                self.duration = end_time - self.duration
+                print("Level {}, runs {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
+                num_runs += 1
                 self.model_update()
 
                 # self.reward_history.append([self.Env.lvl, self.steps, self.episode_reward, self.win])
@@ -362,6 +367,10 @@ class Player(object):
                               "a", newline='') as file:
                         writer = csv.writer(file)
                         writer.writerow(episde_results)
+
+                    print("Level {} use {} seconds to win".format(self.Env.lvl, end_time))
+
+
                     break
 
                 self.episode_reward = 0
