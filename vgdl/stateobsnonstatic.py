@@ -9,9 +9,9 @@ Managing states and observations, for different types of games
 import pygame
 from pybrain.utilities import setAllArgs
 
-from ontology import RotatingAvatar, BASEDIRS, GridPhysics, ShootAvatar, kill_effects
-from core import Avatar
-from tools import listRotate
+from vgdl.ontology import RotatingAvatar, BASEDIRS, GridPhysics, ShootAvatar, kill_effects
+from vgdl.core import Avatar
+from vgdl.tools import listRotate
 from IPython import embed
 
 from collections import defaultdict

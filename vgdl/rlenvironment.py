@@ -9,8 +9,8 @@ This interface is a generic one for interfacing with RL agents.
 
 from numpy import zeros
 import pygame    
-from ontology import BASEDIRS
-from core import VGDLSprite
+from vgdl.ontology import BASEDIRS
+from vgdl.core import VGDLSprite
 from stateobs import StateObsHandler 
 import argparse
 

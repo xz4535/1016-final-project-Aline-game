@@ -1,7 +1,7 @@
 # from IPython import embed
-from util import *
-from core import colorDict, VGDLParser, sys, keyPresses
-from ontology import *
+from vgdl.util import *
+from vgdl.core import colorDict, VGDLParser, sys, keyPresses
+from vgdl.ontology import *
 from theory_template import TimeStep, Precondition, InteractionRule, TerminationRule, TimeoutRule, \
 SpriteCounterRule, MultiSpriteCounterRule, ruleCluster, Theory, Game, writeTheoryToTxt, generateSymbolDict, \
 generateTheoryFromGame

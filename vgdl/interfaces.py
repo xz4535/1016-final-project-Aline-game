@@ -13,9 +13,9 @@ import pygame
 from pybrain.rl.environments.environment import Environment
 from pybrain.rl.environments.episodic import EpisodicTask
 
-from ontology import BASEDIRS
-from core import VGDLSprite
-from stateobs import StateObsHandler 
+from vgdl.ontology import BASEDIRS
+from vgdl.core import VGDLSprite
+from vgdl.stateobs import StateObsHandler 
 
         
     

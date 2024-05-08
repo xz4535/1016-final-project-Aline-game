@@ -20,7 +20,7 @@ Finally, we produce a set of features/observations. Two possibilities:
 
 from scipy import zeros
 from pybrain.utilities import flood
-from ontology import BASEDIRS
+from vgdl.ontology import BASEDIRS
 from interfaces import GameEnvironment
 
 

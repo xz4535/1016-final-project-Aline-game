@@ -1,8 +1,8 @@
 import numpy as np
 from numpy import zeros
 import pygame    
-from ontology import BASEDIRS
-from core import VGDLSprite, colorDict
+from vgdl.ontology import BASEDIRS
+from vgdl.core import VGDLSprite, colorDict
 from stateobsnonstatic import StateObsHandlerNonStatic 
 from rlenvironmentnonstatic import *
 import argparse
@@ -17,8 +17,8 @@ from threading import Lock
 from Queue import Queue
 import multiprocessing
 from qlearner import *
-from ontology import Immovable, Passive, Resource, ResourcePack, RandomNPC, Chaser, AStarChaser, OrientedSprite, Missile
-from ontology import initializeDistribution, updateDistribution, updateOptions, sampleFromDistribution, spriteInduction, selectObjectGoal
+from vgdl.ontology import Immovable, Passive, Resource, ResourcePack, RandomNPC, Chaser, AStarChaser, OrientedSprite, Missile
+from vgdl.ontology import initializeDistribution, updateDistribution, updateOptions, sampleFromDistribution, spriteInduction, selectObjectGoal
 from theory_template import TimeStep, Precondition, InteractionRule, TerminationRule, TimeoutRule, SpriteCounterRule, MultiSpriteCounterRule, \
 generateSymbolDict, ruleCluster, Theory, Game, writeTheoryToTxt, generateTheoryFromGame
 from rlenvironmentnonstatic import createRLInputGame
