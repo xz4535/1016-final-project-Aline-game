@@ -27,7 +27,7 @@ import time
 
 class Player(object):
     def __init__(self, config):
-        # self.start_time = time.time() 
+        self.start_time = time.time() 
         self.config = config
         self.Env = VGDLEnv(self.config.game_name, 'all_games')
         self.Env.set_level(0)
