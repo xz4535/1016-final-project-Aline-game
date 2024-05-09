@@ -1,0 +1,34 @@
+Level 0, rounds 1, episode use 368 step earn 5 rewards in 49.878 seconds
+Level 0, rounds 2, episode use 546 step earn 9 rewards in 25.089 seconds
+Level 0, rounds 3, episode use 998 step earn 24 rewards in 62.078 seconds
+Level 0, rounds 4, episode use 1224 step earn -1 rewards in 32.865 seconds
+Level 0, rounds 5, episode use 1497 step earn 9 rewards in 39.745 seconds
+Level 0, rounds 6, episode use 1688 step earn 8 rewards in 27.691 seconds
+Level 0, rounds 7, episode use 1924 step earn 5 rewards in 33.462 seconds
+Level 0, rounds 8, episode use 3054 step earn 48 rewards in 160.589 seconds
+Level 0, rounds 9, episode use 3893 step earn 31 rewards in 121.453 seconds
+Level 0, rounds 10, episode use 5496 step earn 49 rewards in 229.515 seconds
+Level 0, rounds 11, episode use 5682 step earn 5 rewards in 26.756 seconds
+Level 0, rounds 12, episode use 5900 step earn 23 rewards in 30.690 seconds
+New Best Reward: 23
+Level 0, rounds 13, episode use 6292 step earn 34 rewards in 55.577 seconds
+Level 0, rounds 14, episode use 7137 step earn 44 rewards in 121.542 seconds
+Level 0, rounds 15, episode use 7346 step earn 20 rewards in 30.320 seconds
+Level 0, rounds 16, episode use 7570 step earn 21 rewards in 32.322 seconds
+Level 0, rounds 17, episode use 8492 step earn 57 rewards in 130.128 seconds
+Level 1 use 1715241544.5618 seconds to win
+Next Level!
+Level 1, rounds 18, episode use 9320 step earn 51 rewards in 118.063 seconds
+Level 2 use 1715241662.6302 seconds to win
+Next Level!
+Level 2, rounds 19, episode use 9981 step earn 29 rewards in 93.510 seconds
+Level 2, rounds 20, episode use 10197 step earn 9 rewards in 30.878 seconds
+Level 2, rounds 21, episode use 10383 step earn 9 rewards in 26.543 seconds
+Level 2, rounds 22, episode use 10547 step earn 5 rewards in 23.235 seconds
+Level 2, rounds 23, episode use 11102 step earn 39 rewards in 79.651 seconds
+Level 3 use 1715241916.4490 seconds to win
+Next Level!
+Level 3, rounds 24, episode use 12097 step earn 51 rewards in 139.578 seconds
+Learning Finished
+Level 3 use 1715242056.03 seconds to win
+Done training ALL!

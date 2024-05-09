@@ -408,9 +408,9 @@ class Player(object):
                     writer = csv.writer(file)
                     writer.writerow(episde_results)
 
-                self.save_gif()
-                self.screen_history = []
-                plt.plot(self.total_reward_history)
-                plt.savefig('reward_history{}.png'.format(self.config.game_name))
+                # self.save_gif()
+                # self.screen_history = []
+                # plt.plot(self.total_reward_history)
+                # plt.savefig('reward_history{}.png'.format(self.config.game_name))
 
         self.save_model()
