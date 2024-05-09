@@ -17,6 +17,7 @@ import sys
 from VGDLEnv import VGDLEnv
 import csv
 import cloudpickle
+import matplotlib as plt
 
 import os
 from pygame.locals import K_RIGHT, K_LEFT, K_UP, K_DOWN, K_SPACE
@@ -240,7 +241,7 @@ class Player(object):
                                                                              self.config.level_switch,
                                                                              self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            writer.writerow(["level","runs","steps", "ep_reward", "win", "game_name", "criteria"])
+            writer.writerow(["level","runs","steps", "ep_reward", "win", "game_name", "criteria","time use"])
 
         with open('object_interaction_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
                 self.config.game_name, self.config.level_switch, self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
@@ -271,9 +272,10 @@ class Player(object):
         last_screen = self.get_screen()
         current_screen = self.get_screen()
         self.state = current_screen - last_screen
+        self.start_time = time.time()
 
         while self.steps < self.config.max_steps:
-            self.start_time = time.time()
+            # self.start_time = time.time()
             self.steps += 1
             self.episode_steps += 1
 
@@ -351,22 +353,15 @@ class Player(object):
                 sys.stdout.flush()
                 self.end_time = time.time()
                 self.duration = self.end_time - self.start_time
-                # if self.num_runs == 0:
-                #     self.duration = self.end_time - self.start_time
-
-                #     last_time = int(self.end_time)
-                # else:
-                #     last_time = self.end_time - self.duration
                 print("Level {}, rounds {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
                 self.num_runs += 1
                 # self.duration = 0
-                self.steps = 0
                 self.model_update()
                 # self.reward_history.append([self.Env.lvl, self.steps, self.episode_reward, self.win])
                 episde_results = [self.Env.lvl, self.num_runs,self.steps, self.episode_reward, self.win, self.config.game_name,
-                                  int(self.config.criteria.split('/')[0])]
+                                  int(self.config.criteria.split('/')[0]), self.duration]
 
                 self.recent_history.insert(0, self.win)
                 self.recent_history.pop()
@@ -380,9 +375,8 @@ class Player(object):
                         writer.writerow(episde_results)
 
                     print("Level {} use {} seconds to win".format(self.Env.lvl, self.end_time))
-                    self.start_time=0
-                    self.end_time=0
-
+                    # self.start_time=0
+                    # self.end_time=0
                     break
 
                 self.episode_reward = 0
@@ -417,9 +411,9 @@ class Player(object):
                     writer = csv.writer(file)
                     writer.writerow(episde_results)
 
-                # self.save_gif()
+                self.save_gif()
                 self.screen_history = []
-                # plt.plot(self.total_reward_history)
-                # plt.savefig('reward_history{}.png'.format(self.config.game_name))
+                plt.plot(self.total_reward_history)
+                plt.savefig('reward_history{}.png'.format(self.config.game_name))
 
         self.save_model()
