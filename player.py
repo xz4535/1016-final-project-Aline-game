@@ -236,7 +236,7 @@ class Player(object):
         self.duration = 0
         # self.reward_history = []
 
-        # self.start_time = time.time()
+        self.start_time = time.time()
 
         with open('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                              self.config.level_switch,
@@ -350,7 +350,7 @@ class Player(object):
 
                 # pdb.set_trace()
                 sys.stdout.flush()
-                # self.end_time = time.time()
+                self.end_time = time.time()
                 self.duration = self.end_time - self.start_time
                 print("Level {}, rounds {}, episode use {} step earn {} rewards in {:.3f} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, self.duration))
 
@@ -379,7 +379,7 @@ class Player(object):
                 self.episode_reward = 0
                 # print(self.recent_history)
                 # print("Print Current Level: {}".format(self.Env.lvl))
-                # self.start_time = time.time()
+                self.start_time = time.time()
                 self.Env.reset()
 
                 ## PEDRO: Write pickle to file every 100 episodes

@@ -81,10 +81,10 @@ def load_game(game_name, games_folder):
 
 		if 'expt_ee' in game_name:
 
-			with open('{}/{}'.format(games_folder, file_list['game_{}'.format(lvl_idx)]), 'r') as game:
+			with open('{}/{}'.format(games_folder, file_list['game_{}'.format(lvl_idx+1)]), 'r') as game:
 				gameString = game.read()
 
-		with open('{}/{}'.format(games_folder, file_list[lvl_idx]), 'r') as level:
+		with open('{}/{}'.format(games_folder, file_list[lvl_idx+1]), 'r') as level:
 			levelString = level.read()
 
 		# import pdb; pdb.set_trace()
