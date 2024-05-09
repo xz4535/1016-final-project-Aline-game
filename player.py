@@ -231,6 +231,7 @@ class Player(object):
         self.episode = 0
         self.best_reward = 0
         self.episode_reward = 0
+        self.duration = 0
         # self.reward_history = []
 
         with open('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
@@ -348,13 +349,17 @@ class Player(object):
                 sys.stdout.flush()
                 end_time = time.time()
                 self.duration = end_time - self.start_time
-                print("Level {}, rounds {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs, self.steps, self.episode_reward, self.duration))
+                if self.num_runs == 0:
+                    last_time = int(self.duration)
+                else:
+                    last_time = end_time - self.duration
+                print("Level {}, rounds {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, last_time))
 
                 # Update the target network
                 self.num_runs += 1
                 self.duration = end_time
                 self.model_update()
-
+                print(f"duration = {self.dutation}")
                 # self.reward_history.append([self.Env.lvl, self.steps, self.episode_reward, self.win])
                 episde_results = [self.Env.lvl, self.steps, self.episode_reward, self.win, self.config.game_name,
                                   int(self.config.criteria.split('/')[0])]
