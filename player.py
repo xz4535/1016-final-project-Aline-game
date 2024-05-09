@@ -27,7 +27,7 @@ import time
 
 class Player(object):
     def __init__(self, config):
-        self.start_time = time.time() 
+        self.start_time = 0
         self.config = config
         self.Env = VGDLEnv(self.config.game_name, 'all_games')
         self.Env.set_level(0)
@@ -64,6 +64,7 @@ class Player(object):
         self.screen_history = []
         self.num_runs = 0
         self.duration = 0
+        self.end_time = 0
 
     def save_screen(self):
 
@@ -116,6 +117,8 @@ class Player(object):
                     self.Env.lvl += 1
 
                     self.Env.set_level(self.Env.lvl)
+                    print("Level {} use {} seconds to win".format(self.Env.lvl, self.end_time))
+
                     print("Next Level!")
 
                     self.recent_history = [0] * int(self.config.criteria.split('/')[1])
@@ -238,7 +241,7 @@ class Player(object):
                                                                              self.config.level_switch,
                                                                              self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            writer.writerow(["level", "steps", "ep_reward", "win", "game_name", "criteria"])
+            writer.writerow(["level","runs","steps", "ep_reward", "win", "game_name", "criteria"])
 
         with open('object_interaction_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
                 self.config.game_name, self.config.level_switch, self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
@@ -347,21 +350,21 @@ class Player(object):
 
                 # pdb.set_trace()
                 sys.stdout.flush()
-                end_time = time.time()
-                self.duration = end_time - self.start_time
-                if self.num_runs == 0:
-                    last_time = int(self.duration)
-                else:
-                    last_time = end_time - self.duration
-                print("Level {}, rounds {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, last_time))
+                self.end_time = time.time()
+                self.duration = self.end_time - self.start_time
+                # if self.num_runs == 0:
+                #     last_time = int(self.duration)
+                # else:
+                #     last_time = self.end_time - self.duration
+                print("Level {}, rounds {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
                 self.num_runs += 1
-                self.duration = end_time
+                self.duration = self.end_time
                 self.model_update()
                 print(f"duration = {self.dutation}")
                 # self.reward_history.append([self.Env.lvl, self.steps, self.episode_reward, self.win])
-                episde_results = [self.Env.lvl, self.steps, self.episode_reward, self.win, self.config.game_name,
+                episde_results = [self.Env.lvl, self.num_runs,self.steps, self.episode_reward, self.win, self.config.game_name,
                                   int(self.config.criteria.split('/')[0])]
 
                 self.recent_history.insert(0, self.win)
@@ -375,7 +378,7 @@ class Player(object):
                         writer = csv.writer(file)
                         writer.writerow(episde_results)
 
-                    print("Level {} use {} seconds to win".format(self.Env.lvl, end_time))
+                    print("Level {} use {} seconds to win".format(self.Env.lvl, self.end_time))
 
 
                     break
