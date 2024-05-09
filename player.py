@@ -27,7 +27,6 @@ import time
 
 class Player(object):
     def __init__(self, config):
-        self.start_time = 0
         self.config = config
         self.Env = VGDLEnv(self.config.game_name, 'all_games')
         self.Env.set_level(0)
@@ -61,6 +60,7 @@ class Player(object):
 
         self.num_episodes = config.num_episodes
 
+        self.start_time = 0
         self.screen_history = []
         self.num_runs = 0
         self.duration = 0
@@ -219,11 +219,10 @@ class Player(object):
         self.optimizer.step()
 
     def train_model(self):
-
         print("Training Starting")
         print("-" * 25)
-        start_time = time.time()
-        self.duration = start_time
+        # start_time = time.time()
+        # self.duration = start_time
         if self.config.pretrain:
             print("Loading Model")
 
@@ -274,7 +273,7 @@ class Player(object):
         self.state = current_screen - last_screen
 
         while self.steps < self.config.max_steps:
-            self.duration = 0
+            self.start_time = time.time()
             self.steps += 1
             self.episode_steps += 1
 
@@ -353,16 +352,18 @@ class Player(object):
                 self.end_time = time.time()
                 self.duration = self.end_time - self.start_time
                 # if self.num_runs == 0:
-                #     last_time = int(self.duration)
+                #     self.duration = self.end_time - self.start_time
+
+                #     last_time = int(self.end_time)
                 # else:
                 #     last_time = self.end_time - self.duration
                 print("Level {}, rounds {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
                 self.num_runs += 1
-                self.duration = self.end_time
+                # self.duration = 0
+                self.steps = 0
                 self.model_update()
-                print(f"duration = {self.dutation}")
                 # self.reward_history.append([self.Env.lvl, self.steps, self.episode_reward, self.win])
                 episde_results = [self.Env.lvl, self.num_runs,self.steps, self.episode_reward, self.win, self.config.game_name,
                                   int(self.config.criteria.split('/')[0])]
@@ -379,7 +380,8 @@ class Player(object):
                         writer.writerow(episde_results)
 
                     print("Level {} use {} seconds to win".format(self.Env.lvl, self.end_time))
-
+                    self.start_time=0
+                    self.end_time=0
 
                     break
 
