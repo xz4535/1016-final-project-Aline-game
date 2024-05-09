@@ -118,7 +118,7 @@ class Player(object):
                     self.Env.lvl += 1
 
                     self.Env.set_level(self.Env.lvl)
-                    print("Level {} use {} seconds to win".format(self.Env.lvl, self.end_time))
+                    print("Level {} use {:.4f} seconds to win".format(self.Env.lvl, self.end_time))
 
                     print("Next Level!")
 
@@ -222,8 +222,7 @@ class Player(object):
     def train_model(self):
         print("Training Starting")
         print("-" * 25)
-        # start_time = time.time()
-        # self.duration = start_time
+
         if self.config.pretrain:
             print("Loading Model")
 
@@ -236,6 +235,8 @@ class Player(object):
         self.episode_reward = 0
         self.duration = 0
         # self.reward_history = []
+
+        self.start_time = time.time()
 
         with open('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                              self.config.level_switch,
@@ -272,10 +273,8 @@ class Player(object):
         last_screen = self.get_screen()
         current_screen = self.get_screen()
         self.state = current_screen - last_screen
-        self.start_time = time.time()
 
         while self.steps < self.config.max_steps:
-            # self.start_time = time.time()
             self.steps += 1
             self.episode_steps += 1
 
@@ -353,7 +352,7 @@ class Player(object):
                 sys.stdout.flush()
                 self.end_time = time.time()
                 self.duration = self.end_time - self.start_time
-                print("Level {}, rounds {}, episode use {} step earn {} rewards in {} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, self.duration))
+                print("Level {}, rounds {}, episode use {} step earn {} rewards in {:.3f} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
                 self.num_runs += 1
@@ -374,15 +373,13 @@ class Player(object):
                         writer = csv.writer(file)
                         writer.writerow(episde_results)
 
-                    print("Level {} use {} seconds to win".format(self.Env.lvl, self.end_time))
-                    # self.start_time=0
-                    # self.end_time=0
+                    print("Level {} use {:.2f} seconds to win".format(self.Env.lvl, self.end_time))
                     break
 
                 self.episode_reward = 0
                 # print(self.recent_history)
                 # print("Print Current Level: {}".format(self.Env.lvl))
-
+                self.start_time = time.time()
                 self.Env.reset()
 
                 ## PEDRO: Write pickle to file every 100 episodes
