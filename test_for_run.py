@@ -33,7 +33,7 @@ class Player_test(object):
         self.Env = VGDLEnv(self.config.game_name, 'all_games')
         self.Env.set_level(0)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        print('device = {}, Training at seed = {}'.format(self.device,self.config.random_seed))
+        print('device = {}, Training at seed = {}'.format(self.device,self.config.trail_num))
 
         self.game_size = np.shape(self.Env.render())
         self.input_channels = self.game_size[2]
@@ -100,8 +100,8 @@ class Player_test(object):
 
     def load_model(self):
 
-        self.policy_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_weight_path)))
-        self.target_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_weight_path)))
+        self.policy_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_weight_path), map_location=torch.device(self.device)))
+        self.target_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_weight_path), map_location=torch.device(self.device)))
 
     def level_step(self):
 
@@ -172,7 +172,7 @@ class Player_test(object):
         print("-" * 25)
 
         if self.config.pretrain:
-            print("Loading Model")
+            print("Loading Model Training Results")
 
             self.load_model()
         duration_sum = 0
