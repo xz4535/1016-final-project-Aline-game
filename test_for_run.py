@@ -186,13 +186,13 @@ class Player_test(object):
 
         self.start_time = time.time()
 
-        with open('reward_result_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
+        with open('reward_result_histories/{}_reward_result_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                              self.config.level_switch,
                                                                              self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(["level","runs","steps", "ep_reward", "win", "game_name", "criteria","time use"])
 
-        with open('object_interaction_result_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
+        with open('object_interaction_result_histories/{}_object_interaction_result_history_{}_trial{}.csv'.format(
                 self.config.game_name, self.config.level_switch, self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
             interactionfilewriter = csv.writer(file)
             interactionfilewriter.writerow(
@@ -287,7 +287,7 @@ class Player_test(object):
                 if self.episode_steps > self.config.timeout: print("Game Timed Out")
 
                 ## PEDRO: 3. At the end of each episode, write events to csv
-                with open('object_interaction_result_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
+                with open('object_interaction_result_histories/{}_object_interaction_result_history_{}_trial{}.csv'.format(
                         self.config.game_name, self.config.level_switch, self.config.trial_num), "a", newline='') as file:
                     interactionfilewriter = csv.writer(file)
                     for event_name, count in event_dict.items():
@@ -315,7 +315,7 @@ class Player_test(object):
                 self.recent_history.pop()
 
                 if self.level_step():
-                    with open('reward_result_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
+                    with open('reward_result_histories/{}_reward_result_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                                          self.config.level_switch,
                                                                                          self.config.trial_num),
                               "a", newline='') as file:
@@ -352,7 +352,7 @@ class Player_test(object):
                 # if not self.episode % 10:
                 # np.save("reward_histories/{}_reward_history_{}_trial{}.npy".format(self.config.game_name, self.config.level_switch, self.config.trial_num), self.reward_history)
                 # np.savetxt('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name, self.config.level_switch, self.config.trial_num), a, fmt='%.2f', delimiter=',', header=" level,  steps,  ep_reward,  win")
-                with open('reward_result_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
+                with open('reward_result_histories/{}_reward_result_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                                      self.config.level_switch,
                                                                                      self.config.trial_num),
                           "a", newline='') as file:

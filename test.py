@@ -42,3 +42,5 @@ config.file_names = 'all_games/'
 print("Game: {}".format(config.game_name))
 game_player = Player_test(config)
 game_player.run_model()
+
+print("Done playing ALL!")

@@ -1,0 +1,69 @@
+Namespace(trial_num=2, batch_size=32, lr=0.00025, gamma=0.999, eps_start=1, eps_end=0.1, eps_decay=200.0, target_update=100, img_size=64, num_episodes=20000, max_steps=1000000.0, max_mem=50000, model_name='DQN', model_weight_path=None, test_mode=0, pretrain=0, cuda=1, doubleq=1, level_switch='sequential', timeout=2000, criteria='1/1', game_name='aliens', num_trials=1, random_seed=7)
+Game: aliens
+device = cuda, Training at seed = 2
+Training Starting
+-------------------------
+/content/1016-final-project-Aline-game/player.py:195: UserWarning: indexing with dtype torch.uint8 is now deprecated, please use a dtype torch.bool instead. (Triggered internally at ../aten/src/ATen/native/IndexingUtils.h:27.)
+  next_state_values[non_final_mask] = self.target_net(non_final_next_states).gather(1,
+Level 0, rounds 1, episode use 705 step earn 19 rewards in 62.883 seconds
+Level 0, rounds 2, episode use 1774 step earn 50 rewards in 150.002 seconds
+Level 2 use 1715331908.7300 seconds to win
+Next Level!
+Level 1, rounds 3, episode use 2266 step earn 42 rewards in 190.922 seconds
+Level 1, rounds 4, episode use 2363 step earn 5 rewards in 198.570 seconds
+Level 1, rounds 5, episode use 2578 step earn 21 rewards in 216.799 seconds
+Level 1, rounds 6, episode use 2724 step earn 4 rewards in 229.018 seconds
+Level 1, rounds 7, episode use 2848 step earn 13 rewards in 239.195 seconds
+Level 1, rounds 8, episode use 3235 step earn 18 rewards in 271.495 seconds
+Level 1, rounds 9, episode use 3393 step earn 6 rewards in 284.667 seconds
+Level 1, rounds 10, episode use 3905 step earn 20 rewards in 326.253 seconds
+Level 1, rounds 11, episode use 4064 step earn 8 rewards in 339.375 seconds
+Level 1, rounds 12, episode use 4931 step earn 47 rewards in 410.103 seconds
+Level 3 use 1715332168.8333 seconds to win
+Next Level!
+Level 2, rounds 13, episode use 5090 step earn 3 rewards in 422.963 seconds
+Level 2, rounds 14, episode use 5292 step earn 9 rewards in 442.135 seconds
+Level 2, rounds 15, episode use 6018 step earn 39 rewards in 505.178 seconds
+Level 4 use 1715332263.9103 seconds to win
+Next Level!
+Level 3, rounds 16, episode use 6360 step earn 38 rewards in 535.358 seconds
+Level 3, rounds 17, episode use 6485 step earn 13 rewards in 545.899 seconds
+Level 3, rounds 18, episode use 6868 step earn 20 rewards in 577.846 seconds
+Level 3, rounds 19, episode use 7460 step earn 32 rewards in 626.671 seconds
+Level 3, rounds 20, episode use 7616 step earn 16 rewards in 639.596 seconds
+Level 3, rounds 21, episode use 8095 step earn 27 rewards in 678.762 seconds
+Level 3, rounds 22, episode use 8439 step earn 22 rewards in 707.421 seconds
+Level 3, rounds 23, episode use 8777 step earn 30 rewards in 735.796 seconds
+Level 3, rounds 24, episode use 9403 step earn 35 rewards in 788.170 seconds
+Level 3, rounds 25, episode use 9702 step earn 24 rewards in 812.728 seconds
+Level 3, rounds 26, episode use 10145 step earn 29 rewards in 848.308 seconds
+Level 3, rounds 27, episode use 10407 step earn 21 rewards in 870.248 seconds
+Level 3, rounds 28, episode use 10594 step earn 13 rewards in 885.433 seconds
+Level 3, rounds 29, episode use 10762 step earn 9 rewards in 899.209 seconds
+Level 3, rounds 30, episode use 11022 step earn 17 rewards in 921.035 seconds
+Level 3, rounds 31, episode use 11232 step earn 6 rewards in 937.921 seconds
+Level 3, rounds 32, episode use 11750 step earn 29 rewards in 981.755 seconds
+Level 3, rounds 33, episode use 12020 step earn 20 rewards in 1003.936 seconds
+Level 3, rounds 34, episode use 12390 step earn 21 rewards in 1035.439 seconds
+Level 3, rounds 35, episode use 12663 step earn 13 rewards in 1060.008 seconds
+Level 3, rounds 36, episode use 12853 step earn 8 rewards in 1076.047 seconds
+Level 3, rounds 37, episode use 13101 step earn 15 rewards in 1096.613 seconds
+Level 3, rounds 38, episode use 13683 step earn 31 rewards in 1145.375 seconds
+Level 3, rounds 39, episode use 13885 step earn 15 rewards in 1162.872 seconds
+Level 3, rounds 40, episode use 14108 step earn 10 rewards in 1181.879 seconds
+Level 3, rounds 41, episode use 14396 step earn 16 rewards in 1206.574 seconds
+Level 3, rounds 42, episode use 14660 step earn 4 rewards in 1228.977 seconds
+Level 3, rounds 43, episode use 14862 step earn 12 rewards in 1246.035 seconds
+Level 3, rounds 44, episode use 15500 step earn 37 rewards in 1300.311 seconds
+New Best Reward: 37
+Level 3, rounds 45, episode use 15665 step earn 6 rewards in 1314.300 seconds
+Level 3, rounds 46, episode use 15879 step earn 16 rewards in 1331.867 seconds
+Level 3, rounds 47, episode use 16487 step earn 43 rewards in 1382.513 seconds
+Level 3, rounds 48, episode use 16779 step earn 25 rewards in 1407.197 seconds
+Level 3, rounds 49, episode use 17287 step earn 46 rewards in 1449.196 seconds
+Level 3, rounds 50, episode use 17501 step earn 22 rewards in 1467.545 seconds
+Level 3, rounds 51, episode use 18462 step earn 50 rewards in 1546.622 seconds
+Level 3, rounds 52, episode use 19333 step earn 46 rewards in 1620.604 seconds
+Learning Finished
+Level 3 use 1620.60 seconds to win
+Done training ALL!

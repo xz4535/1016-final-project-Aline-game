@@ -20,7 +20,7 @@ Level 1, rounds 12, episode use 3604 step earn 13 rewards in 56.340 seconds
 Level 1, rounds 13, episode use 3752 step earn 3 rewards in 20.673 seconds
 Level 1, rounds 14, episode use 3931 step earn 5 rewards in 26.339 seconds
 Level 1, rounds 15, episode use 4632 step earn 46 rewards in 101.415 seconds
-Level 1 use   seconds to win
+Level 1 use 296.569 seconds to win
 Next Level!
 Level 2, rounds 16, episode use 4910 step earn 29 rewards in 41.368 seconds
 Level 2, rounds 17, episode use 5141 step earn 20 rewards in 32.828 seconds
@@ -33,7 +33,7 @@ Level 3, rounds 21, episode use 6679 step earn -1 rewards in 20.290 seconds
 Level 3, rounds 22, episode use 6998 step earn 19 rewards in 45.732 seconds
 Level 3, rounds 23, episode use 7129 step earn -1 rewards in 19.439 seconds
 Level 3, rounds 24, episode use 7790 step earn 39 rewards in 94.868 seconds
-Level 3 use   seconds to win
+Level 3 use 1017.574 seconds to win
 Next Level!
 Level 4, rounds 25, episode use 7930 step earn 11 rewards in 19.748 seconds
 Level 4, rounds 26, episode use 9383 step earn 46 rewards in 211.051 seconds
@@ -44,5 +44,5 @@ Level 4, rounds 30, episode use 10181 step earn 13 rewards in 23.970 seconds
 Level 4, rounds 31, episode use 10455 step earn 25 rewards in 40.065 seconds
 Level 4, rounds 32, episode use 11082 step earn 47 rewards in 90.274 seconds
 Learning Finished
-Level 4 use   seconds to win
+Level 4 use 93.896 seconds to win
 Done training ALL!
