@@ -101,6 +101,7 @@ class Player_test(object):
     def load_model(self):
 
         self.policy_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_para_name)))
+        # self.target_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_weight_path)))
         self.target_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_para_name)))
 
     def level_step(self):
