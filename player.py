@@ -340,7 +340,7 @@ class Player(object):
                         self.config.game_name, self.config.level_switch, self.config.trial_num), "a", newline='') as file:
                     interactionfilewriter = csv.writer(file)
                     for event_name, count in event_dict.items():
-                        row = ('DDQN', 'NA', 'NA', self.config.game_name, self.Env.lvl, self.episode, event_name, count)
+                        row = ('DDQN', 'NA', 'NA', self.config.game_name, self.Env.lvl+1, self.episode, event_name, count)
                         interactionfilewriter.writerow(row)
 
                 self.episode += 1
@@ -356,7 +356,7 @@ class Player(object):
                 # self.duration = 0
                 self.model_update()
                 # self.reward_history.append([self.Env.lvl, self.steps, self.episode_reward, self.win])
-                episde_results = [self.Env.lvl, self.num_runs,self.steps, self.episode_reward, self.win, self.config.game_name,
+                episde_results = [self.Env.lvl+1, self.num_runs,self.steps, self.episode_reward, self.win, self.config.game_name,
                                   int(self.config.criteria.split('/')[0]), self.duration]
 
                 self.recent_history.insert(0, self.win)
@@ -370,7 +370,7 @@ class Player(object):
                         writer = csv.writer(file)
                         writer.writerow(episde_results)
 
-                    print("Level {} use {:.2f} seconds to win".format(self.Env.lvl, self.end_time))
+                    print("Level {} use {:.2f} seconds to win".format(self.Env.lvl+1, self.end_time))
                     break
 
                 self.episode_reward = 0
