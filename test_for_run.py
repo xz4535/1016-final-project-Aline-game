@@ -175,7 +175,7 @@ class Player_test(object):
             print("Loading Model")
 
             self.load_model()
-
+        duration_sum = 0
         self.steps = 0
         self.episode_steps = 0
         self.episode = 0
@@ -196,7 +196,7 @@ class Player_test(object):
                 self.config.game_name, self.config.level_switch, self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
             interactionfilewriter = csv.writer(file)
             interactionfilewriter.writerow(
-                ['agent_type', 'subject_ID', 'modelrun_ID', 'game_name', 'game_level', 'episode_number', 'event_name',
+                ['agent_type', 'subject_ID', 'modelrun_ID', 'game_name', 'game_level','runs', 'episode_number', 'event_name',
                  'count'])
 
         # ## PEDRO: Rename as needed
@@ -291,7 +291,7 @@ class Player_test(object):
                         self.config.game_name, self.config.level_switch, self.config.trial_num), "a", newline='') as file:
                     interactionfilewriter = csv.writer(file)
                     for event_name, count in event_dict.items():
-                        row = ('DDQN', 'NA', 'NA', self.config.game_name, self.Env.lvl, self.episode, event_name, count)
+                        row = ('DDQN', 'NA', 'NA', self.config.game_name, self.Env.lvl+1, self.episode, event_name, count)
                         interactionfilewriter.writerow(row)
 
                 self.episode += 1
@@ -300,14 +300,15 @@ class Player_test(object):
                 sys.stdout.flush()
                 self.end_time = time.time()
                 self.duration = self.end_time - self.start_time
-                print("Level {}, rounds {}, episode use {} step earn {} rewards in {:.3f} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, self.duration))
+                duration_sum += self.duration
+                print("Level {}, rounds {}, episode use {} step earn {} rewards in {:.3f} seconds".format(self.Env.lvl+1, self.num_runs+1, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
                 self.num_runs += 1
                 # self.duration = 0
                 # self.model_update()
                 # self.reward_history.append([self.Env.lvl, self.steps, self.episode_reward, self.win])
-                episde_results = [self.Env.lvl, self.num_runs,self.steps, self.episode_reward, self.win, self.config.game_name,
+                episde_results = [self.Env.lvl+1, self.num_runs,self.steps, self.episode_reward, self.win, self.config.game_name,
                                   int(self.config.criteria.split('/')[0]), self.duration]
 
                 self.recent_history.insert(0, self.win)
@@ -321,7 +322,8 @@ class Player_test(object):
                         writer = csv.writer(file)
                         writer.writerow(episde_results)
 
-                    print("Level {} use {:.2f} seconds to win".format(self.Env.lvl, self.end_time))
+                    print("Level {} use {:.2f} seconds to win".format(self.Env.lvl, duration_sum))
+                    duration_sum=0
                     break
             
 
