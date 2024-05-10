@@ -1,0 +1,48 @@
+Namespace(trial_num=100, batch_size=32, lr=0.00025, gamma=0.999, eps_start=1, eps_end=0.1, eps_decay=200.0, target_update=100, img_size=64, num_episodes=20000, max_steps=1000000.0, max_mem=50000, model_name='DQN', model_weight_path=None, test_mode=0, pretrain=0, cuda=1, doubleq=1, level_switch='sequential', timeout=2000, criteria='1/1', game_name='aliens', num_trials=1, random_seed=7)
+Game: aliens
+device = cpu, Training at seed = 100
+Training Starting
+-------------------------
+/content/1016-final-project-Aline-game/player.py:195: UserWarning: indexing with dtype torch.uint8 is now deprecated, please use a dtype torch.bool instead. (Triggered internally at ../aten/src/ATen/native/IndexingUtils.h:27.)
+  next_state_values[non_final_mask] = self.target_net(non_final_next_states).gather(1,
+Level 0, rounds 1, episode use 139 step earn -1 rewards in 17.791 seconds
+Level 0, rounds 2, episode use 281 step earn -1 rewards in 19.964 seconds
+Level 0, rounds 3, episode use 517 step earn -1 rewards in 32.680 seconds
+Level 0, rounds 4, episode use 973 step earn -1 rewards in 66.328 seconds
+Level 0, rounds 5, episode use 1401 step earn -1 rewards in 60.407 seconds
+Level 0, rounds 6, episode use 1822 step earn 0 rewards in 61.057 seconds
+Level 0, rounds 7, episode use 2093 step earn -1 rewards in 38.983 seconds
+Level 0, rounds 8, episode use 2381 step earn -1 rewards in 41.063 seconds
+Level 0, rounds 9, episode use 2734 step earn 5 rewards in 49.779 seconds
+Level 0, rounds 10, episode use 2921 step earn 5 rewards in 28.783 seconds
+Level 0, rounds 11, episode use 3212 step earn 1 rewards in 42.804 seconds
+Level 0, rounds 12, episode use 3604 step earn 13 rewards in 56.340 seconds
+Level 0, rounds 13, episode use 3752 step earn 3 rewards in 20.673 seconds
+Level 0, rounds 14, episode use 3931 step earn 5 rewards in 26.339 seconds
+Level 0, rounds 15, episode use 4632 step earn 46 rewards in 101.415 seconds
+Level 1 use 1715243483.9374 seconds to win
+Next Level!
+Level 1, rounds 16, episode use 4910 step earn 29 rewards in 41.368 seconds
+Level 1, rounds 17, episode use 5141 step earn 20 rewards in 32.828 seconds
+Level 1, rounds 18, episode use 5487 step earn 40 rewards in 50.486 seconds
+Level 1, rounds 19, episode use 6289 step earn 55 rewards in 116.850 seconds
+Level 2 use 1715243725.4733 seconds to win
+Next Level!
+Level 2, rounds 20, episode use 6539 step earn 9 rewards in 37.471 seconds
+Level 2, rounds 21, episode use 6679 step earn -1 rewards in 20.290 seconds
+Level 2, rounds 22, episode use 6998 step earn 19 rewards in 45.732 seconds
+Level 2, rounds 23, episode use 7129 step earn -1 rewards in 19.439 seconds
+Level 2, rounds 24, episode use 7790 step earn 39 rewards in 94.868 seconds
+Level 3 use 1715243943.2740 seconds to win
+Next Level!
+Level 3, rounds 25, episode use 7930 step earn 11 rewards in 19.748 seconds
+Level 3, rounds 26, episode use 9383 step earn 46 rewards in 211.051 seconds
+Level 3, rounds 27, episode use 9455 step earn 6 rewards in 10.530 seconds
+Level 3, rounds 28, episode use 9730 step earn 35 rewards in 40.401 seconds
+Level 3, rounds 29, episode use 10023 step earn 27 rewards in 43.133 seconds
+Level 3, rounds 30, episode use 10181 step earn 13 rewards in 23.970 seconds
+Level 3, rounds 31, episode use 10455 step earn 25 rewards in 40.065 seconds
+Level 3, rounds 32, episode use 11082 step earn 47 rewards in 90.274 seconds
+Learning Finished
+Level 3 use 1715244422.45 seconds to win
+Done training ALL!
