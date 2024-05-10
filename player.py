@@ -234,6 +234,7 @@ class Player(object):
         self.best_reward = 0
         self.episode_reward = 0
         self.duration = 0
+        duration_sum=0
         # self.reward_history = []
 
         self.start_time = time.time()
@@ -349,6 +350,7 @@ class Player(object):
                 sys.stdout.flush()
                 self.end_time = time.time()
                 self.duration = self.end_time - self.start_time
+                duration_sum += int(self.duration)
                 print("Level {}, rounds {}, episode use {} step earn {} rewards in {:.3f} seconds".format(self.Env.lvl+1, self.num_runs+1, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
@@ -370,7 +372,7 @@ class Player(object):
                         writer = csv.writer(file)
                         writer.writerow(episde_results)
 
-                    print("Level {} use {:.2f} seconds to win".format(self.Env.lvl, self.end_time))
+                    print("Level {} use {:.2f} seconds to win".format(self.Env.lvl-1, duration_sum))
                     break
 
                 self.episode_reward = 0
