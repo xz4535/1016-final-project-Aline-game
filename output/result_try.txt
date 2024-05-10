@@ -1,0 +1,7 @@
+Loading Model
+Level 0, rounds 1, episode use 426 step earn 5 rewards in 38.329 seconds
+Level 0, rounds 2, episode use 812 step earn 9 rewards in 30.325 seconds
+Level 0, rounds 3, episode use 1073 step earn 3 rewards in 21.859 seconds
+Level 0, rounds 4, episode use 1514 step earn 11 rewards in 35.069 seconds
+Level 0, rounds 5, episode use 1677 step earn 6 rewards in 12.401 seconds
+Level 0, rounds 6, episode use 1930 step earn 2 rewards in 18.620 seconds
