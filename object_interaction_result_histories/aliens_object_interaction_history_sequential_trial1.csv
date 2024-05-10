@@ -1,0 +1,26 @@
+agent_type,subject_ID,modelrun_ID,game_name,game_level,runs,episode_number,event_name,count
+DDQN,NA,NA,aliens,1,0,"('alienGreen', 'portalFast')",115
+DDQN,NA,NA,aliens,1,0,"('avatar', 'sam')",88
+DDQN,NA,NA,aliens,1,0,"('base', 'sam')",11
+DDQN,NA,NA,aliens,1,0,"('alienGreen', 'sam')",18
+DDQN,NA,NA,aliens,1,0,"('ENDOFSCREEN', 'sam')",77
+DDQN,NA,NA,aliens,1,0,"('alienGreen', 'bomb')",46
+DDQN,NA,NA,aliens,1,0,"('base', 'bomb')",16
+DDQN,NA,NA,aliens,1,0,"('ENDOFSCREEN', 'alienGreen')",34
+DDQN,NA,NA,aliens,1,0,"('ENDOFSCREEN', 'bomb')",28
+DDQN,NA,NA,aliens,1,0,"('alienGreen', 'base')",14
+DDQN,NA,NA,aliens,1,0,"('ENDOFSCREEN', 'avatar')",104
+DDQN,NA,NA,aliens,1,0,"('alienGreen', 'avatar')",1
+DDQN,NA,NA,aliens,1,1,"('alienGreen', 'portalFast')",117
+DDQN,NA,NA,aliens,1,1,"('avatar', 'sam')",38
+DDQN,NA,NA,aliens,1,1,"('base', 'sam')",14
+DDQN,NA,NA,aliens,1,1,"('alienGreen', 'bomb')",63
+DDQN,NA,NA,aliens,1,1,"('base', 'bomb')",23
+DDQN,NA,NA,aliens,1,1,"('ENDOFSCREEN', 'sam')",23
+DDQN,NA,NA,aliens,1,1,"('ENDOFSCREEN', 'bomb')",24
+DDQN,NA,NA,aliens,1,1,"('alienGreen', 'sam')",11
+DDQN,NA,NA,aliens,1,1,"('ENDOFSCREEN', 'alienGreen')",27
+DDQN,NA,NA,aliens,1,1,"('bomb', 'sam')",6
+DDQN,NA,NA,aliens,1,1,"('alienGreen', 'base')",2
+DDQN,NA,NA,aliens,1,1,"('ENDOFSCREEN', 'avatar')",14
+DDQN,NA,NA,aliens,1,1,"('avatar', 'bomb')",1
