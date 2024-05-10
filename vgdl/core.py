@@ -109,6 +109,8 @@ class VGDLParser(object):
         """
         from vgdl.ontology import Immovable,FlakAvatar,Missile,Bomber,SpawnPoint, SpriteCounter, nothing 
         from vgdl.ontology import MultiSpriteCounter,Timeout,turnAround,stepBack,killSprite, changeScore 
+        from vgdl.ontology import Flicker,ShootAvatar,RandomNPC,collectResource,killIfFromAbove, transformTo, killIfOtherHasMore
+
         return eval(estr)
 
     def parseInteractions(self, inodes):
