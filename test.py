@@ -6,9 +6,8 @@ import pdb
 import numpy as np
 import inspect
 
-model_para_name='model.pth'
-
 parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
+parser.add_argument('-model_para_name', default = 'model.pth', required = False)
 parser.add_argument('-trial_num', default = 1, required = False)
 parser.add_argument('-batch_size', default = 32, required = False)
 parser.add_argument('-lr', default = .00025, type = float, required = False)

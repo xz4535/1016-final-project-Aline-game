@@ -68,40 +68,40 @@ class Player_test(object):
         self.duration = 0
         self.end_time = 0
 
-    def save_screen(self):
+    # def save_screen(self):
 
-        misc.imsave('original.png', self.Env.render())
+    #     misc.imsave('original.png', self.Env.render())
 
-        misc.imsave('altered.png', np.rollaxis(self.get_screen().cpu().numpy()[0], 0, 3))
+    #     misc.imsave('altered.png', np.rollaxis(self.get_screen().cpu().numpy()[0], 0, 3))
 
-    def get_screen(self):
-        # imageio.imsave('sample.png', self.Env.render())
-        #pdb.set_trace()
-        screen = self.Env.render().transpose((2, 0, 1))
-        screen = np.ascontiguousarray(screen, dtype=np.float32) / 255
-        screen = torch.from_numpy(screen)
-        # Resize, and add a batch dimension (BCHW)
-        return self.resize(screen).unsqueeze(0).to(self.device)
+    # def get_screen(self):
+    #     # imageio.imsave('sample.png', self.Env.render())
+    #     #pdb.set_trace()
+    #     screen = self.Env.render().transpose((2, 0, 1))
+    #     screen = np.ascontiguousarray(screen, dtype=np.float32) / 255
+    #     screen = torch.from_numpy(screen)
+    #     # Resize, and add a batch dimension (BCHW)
+    #     return self.resize(screen).unsqueeze(0).to(self.device)
 
-    def save_gif(self):
+    # def save_gif(self):
 
-        imageio.mimsave('screens/{}_frame{}.gif'.format(self.config.game_name, self.steps), self.screen_history)
+    #     imageio.mimsave('screens/{}_frame{}.gif'.format(self.config.game_name, self.steps), self.screen_history)
 
-    def append_gif(self):
+    # def append_gif(self):
 
-        frame = self.Env.render(gif=True)
-        self.screen_history.append(frame)
+    #     frame = self.Env.render(gif=True)
+    #     self.screen_history.append(frame)
 
-    def save_model(self):
+    # def save_model(self):
 
-        torch.save(self.target_net.state_dict(),
-                   'model_weights/{}_trial{}_{}.pt'.format(self.config.game_name, self.config.trial_num,
-                                                           self.config.level_switch))
+    #     torch.save(self.target_net.state_dict(),
+    #                'model_weights/{}_trial{}_{}.pt'.format(self.config.game_name, self.config.trial_num,
+    #                                                        self.config.level_switch))
 
     def load_model(self):
 
-        self.policy_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_weight_path)))
-        self.target_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_weight_path)))
+        self.policy_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_para_name)))
+        self.target_net.load_state_dict(torch.load('model_weights/{}'.format(self.config.model_para_name)))
 
     def level_step(self):
 
@@ -243,18 +243,18 @@ class Player_test(object):
 
         self.start_time = time.time()
 
-        # with open('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
-        #                                                                      self.config.level_switch,
-        #                                                                      self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
-        #     writer = csv.writer(file)
-        #     writer.writerow(["level","runs","steps", "ep_reward", "win", "game_name", "criteria","time use"])
+        with open('reward_result_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
+                                                                             self.config.level_switch,
+                                                                             self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(["level","runs","steps", "ep_reward", "win", "game_name", "criteria","time use"])
 
-        # with open('object_interaction_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
-        #         self.config.game_name, self.config.level_switch, self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
-        #     interactionfilewriter = csv.writer(file)
-        #     interactionfilewriter.writerow(
-        #         ['agent_type', 'subject_ID', 'modelrun_ID', 'game_name', 'game_level', 'episode_number', 'event_name',
-        #          'count'])
+        with open('object_interaction_result_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
+                self.config.game_name, self.config.level_switch, self.config.trial_num), 'w', newline='', encoding='utf-8') as file:
+            interactionfilewriter = csv.writer(file)
+            interactionfilewriter.writerow(
+                ['agent_type', 'subject_ID', 'modelrun_ID', 'game_name', 'game_level', 'episode_number', 'event_name',
+                 'count'])
 
         # ## PEDRO: Rename as needed
         # picklefilepath = 'pickleFiles/{}.csv'.format(self.config.game_name)
@@ -344,7 +344,7 @@ class Player_test(object):
                 if self.episode_steps > self.config.timeout: print("Game Timed Out")
 
                 ## PEDRO: 3. At the end of each episode, write events to csv
-                with open('object_interaction_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
+                with open('object_interaction_result_histories/{}_object_interaction_history_{}_trial{}.csv'.format(
                         self.config.game_name, self.config.level_switch, self.config.trial_num), "a", newline='') as file:
                     interactionfilewriter = csv.writer(file)
                     for event_name, count in event_dict.items():
@@ -371,7 +371,7 @@ class Player_test(object):
                 self.recent_history.pop()
 
                 if self.level_step():
-                    with open('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
+                    with open('reward_result_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                                          self.config.level_switch,
                                                                                          self.config.trial_num),
                               "a", newline='') as file:
@@ -407,7 +407,7 @@ class Player_test(object):
                 # if not self.episode % 10:
                 # np.save("reward_histories/{}_reward_history_{}_trial{}.npy".format(self.config.game_name, self.config.level_switch, self.config.trial_num), self.reward_history)
                 # np.savetxt('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name, self.config.level_switch, self.config.trial_num), a, fmt='%.2f', delimiter=',', header=" level,  steps,  ep_reward,  win")
-                with open('reward_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
+                with open('reward_result_histories/{}_reward_history_{}_trial{}.csv'.format(self.config.game_name,
                                                                                      self.config.level_switch,
                                                                                      self.config.trial_num),
                           "a", newline='') as file:

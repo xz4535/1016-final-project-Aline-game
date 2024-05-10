@@ -118,7 +118,7 @@ class Player(object):
                     self.Env.lvl += 1
 
                     self.Env.set_level(self.Env.lvl)
-                    print("Level {} use {:.4f} seconds to win".format(self.Env.lvl, self.end_time))
+                    print("Level {} use {:.4f} seconds to win".format(self.Env.lvl+1, self.end_time))
 
                     print("Next Level!")
 
@@ -250,9 +250,6 @@ class Player(object):
             interactionfilewriter.writerow(
                 ['agent_type', 'subject_ID', 'modelrun_ID', 'game_name', 'game_level', 'episode_number', 'event_name',
                  'count'])
-
-        ## PEDRO: Rename as needed
-        picklefilepath = 'pickleFiles/{}.csv'.format(self.config.game_name)
 
         self.recent_history = [0] * int(self.config.criteria.split('/')[1])
 
