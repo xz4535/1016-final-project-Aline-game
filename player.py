@@ -118,7 +118,7 @@ class Player(object):
                     self.Env.lvl += 1
 
                     self.Env.set_level(self.Env.lvl)
-                    print("Level {} use {:.4f} seconds to win".format(self.Env.lvl+1, self.end_time))
+                    print("Level {} use {:.4f} seconds to win".format(self.Env.lvl, self.end_time))
 
                     print("Next Level!")
 
@@ -372,7 +372,7 @@ class Player(object):
                         writer = csv.writer(file)
                         writer.writerow(episde_results)
 
-                    print("Level {} use {:.2f} seconds to win".format(self.Env.lvl-1, duration_sum))
+                    print("Level {} use {:.2f} seconds to win".format(self.Env.lvl, duration_sum))
                     break
 
                 self.episode_reward = 0
