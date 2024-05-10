@@ -349,7 +349,7 @@ class Player(object):
                 sys.stdout.flush()
                 self.end_time = time.time()
                 self.duration = self.end_time - self.start_time
-                print("Level {}, rounds {}, episode use {} step earn {} rewards in {:.3f} seconds".format(self.Env.lvl, self.num_runs+1, self.steps, self.episode_reward, self.duration))
+                print("Level {}, rounds {}, episode use {} step earn {} rewards in {:.3f} seconds".format(self.Env.lvl+1, self.num_runs+1, self.steps, self.episode_reward, self.duration))
 
                 # Update the target network
                 self.num_runs += 1
