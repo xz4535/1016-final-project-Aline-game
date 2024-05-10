@@ -1,11 +1,11 @@
 import argparse
 import sys
 import time
-from Testforun import Player_test
+from test_for_run import Player_test
 import pdb
 import numpy as np
 import inspect
-model_para_name= 'model.pth'
+model_para_name= 'aliens_trial1_sequential.pt'
 
 parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
 parser.add_argument('-trial_num', default = 1, required = False)
