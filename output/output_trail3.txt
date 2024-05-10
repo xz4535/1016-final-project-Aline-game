@@ -1,0 +1,72 @@
+['BDQVRW', 'BLACK', 'BLUE', 'BONLZE', 'BOQTWB', 'BPEQXN', 'BPTHDK', 'BROWN', 'BVUTFD', 'BZYZDJ', 'CCCQPN', 'CCKQQB', 'CCVIDF', 'CDMHFV', 'CLWOJZ', 'CMBDTF', 'CQISPW', 'CVHTTO', 'CWTKFM', 'DARKBLUE', 'DARKGRAY', 'DKHPYF', 'DLLJEV', 'DSLBHZ', 'DSRBEO', 'DTIZDF', 'DTMTLN', 'DVBXBT', 'DWBTUH', 'DZLLCX', 'DZYCEK', 'ECPCTK', 'EDXSMT', 'ENDOFSCREEN', 'ENKXEZ', 'EONWMR', 'EWZHFR', 'EZLHWK', 'FFKHKD', 'FMXEZI', 'FSDLDR', 'FUSCHA', 'FVNBXZ', 'FXQLLE', 'GOLD', 'GRAY', 'GREEN', 'HCFCUW', 'HQICBN', 'HTEOCR', 'HZZQRH', 'IECTMM', 'IEOBUR', 'IHYILT', 'IJBUWM', 'IJRXPC', 'IMBEXR', 'IOQEEF', 'IUCUFJ', 'IUTBND', 'JBTDKH', 'JCRNMZ', 'JCWDMB', 'JHXDKF', 'JIOQMO', 'JKYQKK', 'JLEBVX', 'JPOSPB', 'JTNWQF', 'JYXSCJ', 'KMFSEE', 'KRYQTZ', 'KSXCRX', 'KXHVVM', 'KZHXRM', 'LBLFCJ', 'LBOJWZ', 'LIGHTBLUE', 'LIGHTFUSCHA', 'LIGHTGRAY', 'LIGHTGREEN', 'LIGHTORANGE', 'LIGHTRED', 'LKLWDD', 'LMZTUO', 'LRSPUS', 'MCKLTV', 'MHFZEQ', 'MKUEDB', 'MMQXRZ', 'MPUYEI', 'MQEJFT', 'MRVJZM', 'MTODRQ', 'MWVUHQ', 'MYXOHJ', 'MZBUTY', 'NCVLNB', 'NDINZN', 'NNXTPH', 'NNZXQZ', 'NUPHKK', 'Node', 'OFPSUE', 'OFRXBV', 'OIWCSZ', 'OMBDHZ', 'OQCZME', 'ORANGE', 'OUCNVN', 'OYEYOX', 'PDEQVQ', 'PINK', 'PPMELW', 'PPOSXQ', 'PPTTUZ', 'PURPLE', 'PVQDZQ', 'PZUPHU', 'QEDYZV', 'QIBKBT', 'QMDTIK', 'QMIWED', 'QSWMOZ', 'QTLHNJ', 'QUHQXK', 'QUMRRU', 'QZVIHJ', 'RED', 'RESOURCETOADD', 'RNDCCC', 'RQEVUC', 'RSQPUS', 'SCJPNE', 'SCORECOLOR', 'SELSNW', 'SFPCWM', 'SFZFVC', 'SHOBXO', 'SQYLIY', 'SUHUEL', 'SXMBCO', 'TCTHBN', 'TDLEMS', 'TFDXMS', 'TVUEMH', 'VFSSFR', 'VNUJQV', 'VNZEDJ', 'VPCKIC', 'VRPIWW', 'VSIWDJ', 'VUERDP', 'VVDOEV', 'VYPDQP', 'WFJBDY', 'WHITE', 'WJIDVE', 'WLMEZR', 'WSOTBR', 'XPFNZB', 'XTOSVV', 'XUMCHF', 'XUUYXP', 'XVTHBZ', 'XYQVMP', 'YELLOW', 'YOYTZM', 'YZYPTX', 'ZBUKBZ', 'ZFZCIB', 'ZKXVVB', 'ZTSCUL', 'ZXQYUC', 'ZYWQBZ', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'choice', 'colorDict', 'datetime', 'deepcopy', 'defaultdict', 'embed', 'getObjectColor', 'glob', 'indentTreeParser', 'itertools', 'logging', 'np', 'oncePerStep', 'os', 'pygame', 'random', 're', 'roundedPoints', 'scipy', 'shutil', 'sqrt', 'subprocess', 'sys', 'time', 'triPoints', 'unitVector', 'uuid', 'vectNorm']
+Namespace(trial_num=3, batch_size=32, lr=0.00025, gamma=0.999, eps_start=1, eps_end=0.1, eps_decay=200.0, target_update=100, img_size=64, num_episodes=20000, max_steps=1000000.0, max_mem=50000, model_name='DQN', model_weight_path=None, test_mode=0, pretrain=0, cuda=1, doubleq=1, level_switch='sequential', timeout=2000, criteria='1/1', game_name='aliens', num_trials=1, random_seed=7)
+Game: aliens
+device = cpu, Training at seed = 3
+Training Starting
+-------------------------
+/content/1016-final-project-Aline-game/player.py:195: UserWarning: indexing with dtype torch.uint8 is now deprecated, please use a dtype torch.bool instead. (Triggered internally at ../aten/src/ATen/native/IndexingUtils.h:27.)
+  next_state_values[non_final_mask] = self.target_net(non_final_next_states).gather(1,
+Level 1, rounds 1, episode use 324 step earn 12 rewards in 46.225 seconds
+Level 1, rounds 2, episode use 608 step earn 17 rewards in 42.062 seconds
+Level 1, rounds 3, episode use 868 step earn 6 rewards in 38.094 seconds
+Level 1, rounds 4, episode use 1139 step earn 11 rewards in 39.897 seconds
+Level 1, rounds 5, episode use 1275 step earn 6 rewards in 19.461 seconds
+Level 1, rounds 6, episode use 1513 step earn 17 rewards in 34.990 seconds
+Level 1, rounds 7, episode use 3050 step earn 49 rewards in 223.593 seconds
+Level 1, rounds 8, episode use 3491 step earn 40 rewards in 64.586 seconds
+Level 1, rounds 9, episode use 3802 step earn 17 rewards in 45.422 seconds
+Level 1, rounds 10, episode use 3963 step earn 12 rewards in 25.793 seconds
+Level 1, rounds 11, episode use 4190 step earn 11 rewards in 33.708 seconds
+Level 1, rounds 12, episode use 4454 step earn 20 rewards in 38.638 seconds
+Level 1, rounds 13, episode use 5133 step earn 46 rewards in 101.671 seconds
+Level 1, rounds 14, episode use 5340 step earn 12 rewards in 31.227 seconds
+Level 1, rounds 15, episode use 5929 step earn 48 rewards in 88.642 seconds
+Level 1, rounds 16, episode use 6505 step earn 27 rewards in 84.992 seconds
+Level 1, rounds 17, episode use 6633 step earn 9 rewards in 18.820 seconds
+Level 1, rounds 18, episode use 6938 step earn 32 rewards in 45.998 seconds
+Level 1, rounds 19, episode use 7154 step earn 9 rewards in 31.780 seconds
+Level 1, rounds 20, episode use 7268 step earn 7 rewards in 16.622 seconds
+Level 1, rounds 21, episode use 7963 step earn 41 rewards in 106.343 seconds
+Level 1, rounds 22, episode use 8657 step earn 59 rewards in 104.381 seconds
+Level 2 use 1715363665.4620 seconds to win
+Next Level!
+Level 2, rounds 23, episode use 9165 step earn 46 rewards in 76.081 seconds
+Level 2, rounds 24, episode use 9444 step earn 29 rewards in 41.126 seconds
+Level 2, rounds 25, episode use 9802 step earn 39 rewards in 52.306 seconds
+Level 2, rounds 26, episode use 10208 step earn 37 rewards in 60.077 seconds
+Level 2, rounds 27, episode use 10449 step earn 21 rewards in 35.053 seconds
+Level 2, rounds 28, episode use 11571 step earn 52 rewards in 167.685 seconds
+Level 3 use 1715364097.7929 seconds to win
+Next Level!
+Level 3, rounds 29, episode use 11876 step earn 21 rewards in 44.129 seconds
+Level 3, rounds 30, episode use 12008 step earn 1 rewards in 18.653 seconds
+Level 3, rounds 31, episode use 12202 step earn 7 rewards in 28.841 seconds
+Level 3, rounds 32, episode use 12478 step earn 11 rewards in 41.391 seconds
+Level 3, rounds 33, episode use 12775 step earn 25 rewards in 43.030 seconds
+Level 3, rounds 34, episode use 12929 step earn 3 rewards in 21.332 seconds
+Level 3, rounds 35, episode use 13068 step earn 3 rewards in 20.778 seconds
+Level 3, rounds 36, episode use 13293 step earn 9 rewards in 32.472 seconds
+Level 3, rounds 37, episode use 13445 step earn 5 rewards in 22.828 seconds
+Level 3, rounds 38, episode use 13629 step earn 11 rewards in 36.384 seconds
+Level 3, rounds 39, episode use 13812 step earn 9 rewards in 27.137 seconds
+Level 3, rounds 40, episode use 14026 step earn 15 rewards in 31.304 seconds
+Level 3, rounds 41, episode use 14169 step earn 3 rewards in 22.190 seconds
+Level 3, rounds 42, episode use 14373 step earn 5 rewards in 30.252 seconds
+Level 3, rounds 43, episode use 15199 step earn 39 rewards in 121.450 seconds
+Level 4 use 1715364639.9648 seconds to win
+Next Level!
+Level 4, rounds 44, episode use 15381 step earn 10 rewards in 26.913 seconds
+Level 4, rounds 45, episode use 15505 step earn 8 rewards in 18.023 seconds
+Level 4, rounds 46, episode use 15849 step earn 22 rewards in 52.895 seconds
+Level 4, rounds 47, episode use 16110 step earn 12 rewards in 39.560 seconds
+Level 4, rounds 48, episode use 16296 step earn 12 rewards in 27.700 seconds
+Level 4, rounds 49, episode use 16583 step earn 19 rewards in 43.163 seconds
+Level 4, rounds 50, episode use 17130 step earn 46 rewards in 81.762 seconds
+Level 4, rounds 51, episode use 17600 step earn 34 rewards in 71.879 seconds
+New Best Reward: 34
+Level 4, rounds 52, episode use 17994 step earn 29 rewards in 59.950 seconds
+Level 4, rounds 53, episode use 18219 step earn 16 rewards in 33.554 seconds
+Level 4, rounds 54, episode use 19634 step earn 50 rewards in 212.369 seconds
+Learning Finished
+Level 2 use 2898.00 seconds to win
+Done training ALL!
