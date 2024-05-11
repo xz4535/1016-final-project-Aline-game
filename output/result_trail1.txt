@@ -30,3 +30,6 @@ Level 4, rounds 5, episode use 1703 step earn 7 rewards in 11.241 seconds
 Level 4, rounds 1, episode use 426 step earn 25 rewards in 22.537 seconds
 Level 4, rounds 2, episode use 792 step earn 21 rewards in 19.133 seconds
 
+Level 4, rounds 1, episode use 1429 step earn 39 rewards in 82.981 seconds
+Level 4, rounds 2, episode use 1687 step earn 16 rewards in 14.992 seconds
+Level 4, rounds 1, episode use 592 step earn 32 rewards in 33.985 seconds
