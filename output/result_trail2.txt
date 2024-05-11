@@ -1,0 +1,15 @@
+device = cpu, Training at seed = 2
+game Starting
+-------------------------
+Loading Model Training Results
+Level 1, rounds 1, episode use 190 step earn 9 rewards in 11.011 seconds
+Level 1, rounds 2, episode use 749 step earn 17 rewards in 31.724 seconds
+Level 1, rounds 3, episode use 1059 step earn 20 rewards in 17.653 seconds
+Level 1, rounds 4, episode use 1983 step earn 39 rewards in 52.171 seconds
+Level 1, rounds 1, episode use 150 step earn 5 rewards in 9.262 seconds
+Level 1, rounds 2, episode use 477 step earn 14 rewards in 19.790 seconds
+Level 1, rounds 3, episode use 772 step earn 3 rewards in 18.022 seconds
+Level 1, rounds 4, episode use 1099 step earn 10 rewards in 19.808 seconds
+Level 1, rounds 5, episode use 1401 step earn 8 rewards in 17.981 seconds
+Level 1, rounds 6, episode use 1619 step earn 3 rewards in 13.068 seconds
+Level 1, rounds 7, episode use 1811 step earn 4 rewards in 11.543 seconds
