@@ -30,7 +30,7 @@ def parse_game_data(lines):
     return data
 
 # Read the contents of the file
-with open('output/output_trail3.txt', 'r') as file:
+with open('output/output_trail1.txt', 'r') as file:
     lines = file.readlines()
 
 # Parse the game data
@@ -41,7 +41,7 @@ columns = ['Level', 'Rounds', 'Steps', 'Reward', 'Win', 'Time Use']
 game_df = pd.DataFrame(game_data, columns=columns)
 
 # Save the DataFrame to an Excel file
-excel_path = 'output/result_trail3.xlsx'
+excel_path = 'output/result_trail1.xlsx'
 game_df.to_excel(excel_path, index=False)
 
 excel_path  # Return the path to the created Excel file for download
