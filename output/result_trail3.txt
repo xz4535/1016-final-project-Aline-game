@@ -4,21 +4,32 @@ game Starting
 Loading Model Training Results
 Level 1, rounds 1, episode use 238 step earn 18 rewards in 16.344 seconds
 Level 1, rounds 2, episode use 1067 step earn 49 rewards in 53.557 seconds
-Level 1 use 1715391925.4336 seconds to win
-Next Level!
-Level 2, rounds 3, episode use 1512 step earn 27 rewards in 30.329 seconds
-Level 2, rounds 4, episode use 1718 step earn 15 rewards in 13.488 seconds
-Level 2, rounds 5, episode use 1973 step earn 18 rewards in 16.398 seconds
+Level 1, rounds 3, episode use 1512 step earn 27 rewards in 30.329 seconds
+Level 1, rounds 4, episode use 1718 step earn 15 rewards in 13.488 seconds
+Level 1, rounds 5, episode use 1973 step earn 18 rewards in 16.398 seconds
 Level 1, rounds 1, episode use 382 step earn 42 rewards in 24.886 seconds
-Level 1, rounds 2, episode use 490 step earn 8 rewards in 7.404 seconds
-Level 1, rounds 3, episode use 1015 step earn 43 rewards in 33.987 seconds
-Level 1, rounds 4, episode use 1179 step earn 11 rewards in 10.316 seconds
-Level 1, rounds 5, episode use 1397 step earn 20 rewards in 14.421 seconds
-Level 1, rounds 6, episode use 1552 step earn 13 rewards in 9.848 seconds
-Level 1, rounds 7, episode use 1809 step earn 21 rewards in 17.425 seconds
-Level 1, rounds 1, episode use 337 step earn 31 rewards in 22.238 seconds
-Level 1, rounds 2, episode use 555 step earn 16 rewards in 14.124 seconds
-Level 1, rounds 3, episode use 925 step earn 37 rewards in 24.033 seconds
-Level 1, rounds 4, episode use 1090 step earn 9 rewards in 11.869 seconds
-Level 1, rounds 5, episode use 1256 step earn 12 rewards in 11.028 seconds
-Level 1, rounds 6, episode use 1538 step earn 18 rewards in 18.072 seconds
+Level 2, rounds 1, episode use 486 step earn 40 rewards in 28.731 seconds
+Level 2, rounds 2, episode use 703 step earn 19 rewards in 12.601 seconds
+Level 2, rounds 3, episode use 956 step earn 19 rewards in 14.662 seconds
+Level 2, rounds 4, episode use 1348 step earn 22 rewards in 23.010 seconds
+Level 2, rounds 5, episode use 1700 step earn 24 rewards in 21.752 seconds
+Level 2, rounds 6, episode use 1994 step earn 28 rewards in 16.845 seconds
+Level 2, rounds 3, episode use 532 step earn 18 rewards in 17.879 seconds
+Level 2, rounds 4, episode use 780 step earn 13 rewards in 14.505 seconds
+Level 2, rounds 5, episode use 1028 step earn 12 rewards in 14.433 seconds
+Level 2, rounds 6, episode use 1291 step earn 22 rewards in 15.362 seconds
+Level 2, rounds 8, episode use 1941 step earn 52 rewards in 30.444 seconds
+Level 2, rounds 5, episode use 1487 step earn 51 rewards in 39.646 seconds
+Level 2, rounds 6, episode use 1955 step earn 35 rewards in 28.554 seconds
+Level 3, rounds 1, episode use 161 step earn 4 rewards in 10.970 seconds
+Level 3, rounds 2, episode use 323 step earn 4 rewards in 10.952 seconds
+Level 3, rounds 3, episode use 666 step earn 7 rewards in 23.098 seconds
+Level 3, rounds 1, episode use 1450 step earn 38 rewards in 85.853 seconds
+Level 3, rounds 1, episode use 375 step earn 2 rewards in 22.114 seconds
+Level 3, rounds 2, episode use 1228 step earn 24 rewards in 49.563 seconds
+Level 3, rounds 3, episode use 1581 step earn 13 rewards in 22.148 seconds
+Level 3, rounds 1, episode use 209 step earn 7 rewards in 12.320 seconds
+Level 3, rounds 2, episode use 337 step earn 4 rewards in 7.884 seconds
+Level 3, rounds 3, episode use 515 step earn 4 rewards in 10.551 seconds
+Level 3, rounds 4, episode use 807 step earn 4 rewards in 16.895 seconds
+
