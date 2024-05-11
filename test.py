@@ -40,7 +40,14 @@ print(config)
 config.file_names = 'all_games/'
 
 print("Game: {}".format(config.game_name))
-game_player = Player_test(config)
-game_player.run_model()
+
+for trial_num in range(config.num_trials):
+	config.trial_num =  trial_num + int(config.trial_num)
+	config.random_seed = config.trial_num
+	game_player = Player_test(config)
+	game_player.run_model()
+
+
+
 
 print("Done playing ALL!")

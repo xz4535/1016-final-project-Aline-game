@@ -1,6 +1,6 @@
-Namespace(trial_num=100, batch_size=32, lr=0.00025, gamma=0.999, eps_start=1, eps_end=0.1, eps_decay=200.0, target_update=100, img_size=64, num_episodes=20000, max_steps=1000000.0, max_mem=50000, model_name='DQN', model_weight_path=None, test_mode=0, pretrain=0, cuda=1, doubleq=1, level_switch='sequential', timeout=2000, criteria='1/1', game_name='aliens', num_trials=1, random_seed=7)
+Namespace(trial_num=4, batch_size=32, lr=0.00025, gamma=0.999, eps_start=1, eps_end=0.1, eps_decay=200.0, target_update=100, img_size=64, num_episodes=20000, max_steps=1000000.0, max_mem=50000, model_name='DQN', model_weight_path=None, test_mode=0, pretrain=0, cuda=1, doubleq=1, level_switch='sequential', timeout=2000, criteria='1/1', game_name='aliens', num_trials=1, random_seed=7)
 Game: aliens
-device = cpu, Training at seed = 100
+device = cpu, Training at seed = 4
 Training Starting
 -------------------------
 /content/1016-final-project-Aline-game/player.py:195: UserWarning: indexing with dtype torch.uint8 is now deprecated, please use a dtype torch.bool instead. (Triggered internally at ../aten/src/ATen/native/IndexingUtils.h:27.)

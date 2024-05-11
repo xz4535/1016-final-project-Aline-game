@@ -33,7 +33,7 @@ class Player_test(object):
         self.Env = VGDLEnv(self.config.game_name, 'all_games')
         self.Env.set_level(0)
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        print('device = {}, Training at seed = {}'.format(self.device,self.config.trail_num))
+        print('device = {}, Training at seed = {}'.format(self.device,self.config.trial_num))
 
         self.game_size = np.shape(self.Env.render())
         self.input_channels = self.game_size[2]
